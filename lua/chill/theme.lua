@@ -2,15 +2,15 @@ local M = {}
 
 function M.generate(config)
 	local variant = config.variant or "dark"
-	local contrast = config.contrast or "normal"
+	local contrast = config.contrast or "high"
 	local transparent = config.transparent or false
 	local italics = config.italics
 	if italics == nil then
 		italics = true
 	end
 
-	-- Palette for dark theme (normal contrast)
-	local dark_normal = {
+	-- Palette for dark theme (low contrast)
+	local low_contrast = {
 		-- Main colors
 		bg0 = "#27312E", -- Main background (slightly lighter green)
 		bg1 = "#2A342F", -- Secondary background (status line, floating windows)
@@ -90,6 +90,48 @@ function M.generate(config)
 		diff_add = "#526854", -- Brighter added line
 		diff_mod = "#5D6B6D", -- Brighter modified line
 		diff_del = "#6C5A5B", -- Brighter deleted line
+
+		-- None is used to reset highlight
+		none = "NONE",
+	}
+
+	-- Palette for dark theme (higher contrast)
+	local higher_contrast = {
+		bg0 = "#101514", -- Darker main background
+		bg1 = "#1A2320", -- Darker secondary background
+		bg2 = "#24302C", -- Darker lighter background
+		bg3 = "#2E3D38", -- Darker subtle selection background
+		fg0 = "#F0E6D8", -- Brighter main foreground
+		fg1 = "#D4C8B0", -- Brighter secondary foreground
+		fg2 = "#B8AC98", -- Brighter dimmed foreground
+
+		-- Accent colors (more vibrant for higher contrast)
+		green = "#A8D4A0", -- Vibrant moss/lichen
+		green_dim = "#8CB88C", -- Vibrant deeper moss
+		blue = "#B0E0E6", -- Vibrant misty blue-green
+		blue_dim = "#94C4CA", -- Vibrant deeper misty blue
+		aqua = "#C0E8D8", -- Vibrant sage
+		aqua_dim = "#A4CCBC", -- Vibrant deeper sage
+		purple = "#E0B0D0", -- Vibrant faded berry
+		purple_dim = "#C494B4", -- Vibrant deeper faded berry
+		yellow = "#FFE080", -- Vibrant autumn leaf
+		yellow_dim = "#DCC060", -- Vibrant deeper autumn leaf
+		orange = "#FFC080", -- Vibrant oak
+		orange_dim = "#DCA060", -- Vibrant deeper oak
+		red = "#FF8080", -- Vibrant faded red mushroom
+		red_dim = "#DC6060", -- Vibrant deeper red mushroom
+		grey = "#A8B0A8", -- Vibrant stone grey
+
+		-- Special purpose
+		error = "#FF7070", -- Vibrant error text
+		warning = "#FFD080", -- Vibrant warning text
+		hint = "#A8D8D8", -- Vibrant hint text
+		info = "#90C8A8", -- Vibrant info text
+
+		-- Diff
+		diff_add = "#607860", -- Vibrant added line
+		diff_mod = "#687878", -- Vibrant modified line
+		diff_del = "#786060", -- Vibrant deleted line
 
 		-- None is used to reset highlight
 		none = "NONE",
@@ -191,9 +233,11 @@ function M.generate(config)
 		end
 	else
 		if contrast == "high" then
-			p = dark_high
+			p = higher_contrast
+		elseif contrast == "low" then
+			p = low_contrast
 		else
-			p = dark_normal
+			p = dark_high
 		end
 	end
 
