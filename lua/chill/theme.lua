@@ -344,8 +344,8 @@ function M.generate(config)
 		["@keyword.return"] = { fg = p.red },
 		["@keyword.operator"] = { fg = p.red },
 
-		["@variable"] = { fg = p.fg0 },
-		["@variable.builtin"] = { fg = p.red, italic = use_italic },
+		["@variable"] = { fg = p.blue }, -- Highlight variables
+		["@variable.member"] = { fg = p.aqua }, -- Highlight member variables
 
 		["@constructor"] = { fg = p.yellow },
 		["@tag"] = { fg = p.red },
@@ -367,8 +367,8 @@ function M.generate(config)
 		["@function.macro"] = { fg = p.aqua },
 		["@method"] = { fg = p.aqua },
 		["@parameter"] = { fg = p.fg0, italic = use_italic },
-		["@field"] = { fg = p.blue },
-		["@property"] = { fg = p.blue },
+		["@field"] = { fg = p.blue, bg = p.none, bold = false, italic = false }, -- Explicitly highlight fields like `req`
+		["@property"] = { fg = p.blue, bg = p.none, bold = false, italic = false }, -- Explicitly highlight properties like `query` and `zip`
 		["@conditional"] = { link = "Conditional" },
 
 		["@namespace"] = { fg = p.yellow_dim },
