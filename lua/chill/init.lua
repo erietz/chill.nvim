@@ -1,5 +1,14 @@
 local M = {}
 
+-- Make sure config is maintained with module reloads
+M._config = M._config
+	or {
+		variant = "dark", -- 'dark' or 'light'
+		transparent = false, -- Enable transparent background
+		italics = true, -- Use italics for comments and certain syntax elements
+		dim_inactive = false, -- Dim inactive windows
+	}
+
 local defaults = {
 	variant = "dark", -- 'dark' or 'light'
 	transparent = false, -- Enable transparent background
@@ -7,10 +16,13 @@ local defaults = {
 	dim_inactive = false, -- Dim inactive windows
 }
 
-local config = defaults
+local config = M._config
 
 function M.setup(user_config)
+	-- Update both the local config and the persistent module config
 	config = vim.tbl_deep_extend("force", defaults, user_config or {})
+	M._config = vim.deepcopy(config)
+
 	return config
 end
 
