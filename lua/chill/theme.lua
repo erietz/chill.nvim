@@ -12,7 +12,7 @@ function M.generate(config)
 	-- Palette for dark theme (normal contrast)
 	local dark_normal = {
 		-- Main colors
-		bg0 = "#1C2321", -- Main background
+		bg0 = "#27312E", -- Main background (slightly lighter green)
 		bg1 = "#2A342F", -- Secondary background (status line, floating windows)
 		bg2 = "#384740", -- Lighter background (line nr, folded text)
 		bg3 = "#4B5E54", -- Subtle selection background
