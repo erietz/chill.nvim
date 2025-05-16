@@ -388,8 +388,10 @@ function M.generate(config)
 		["@keyword.return"] = { fg = p.red },
 		["@keyword.operator"] = { fg = p.red },
 
-		["@variable"] = { fg = p.blue }, -- Highlight variables
-		["@variable.member"] = { fg = p.aqua }, -- Highlight member variables
+		-- ["@variable"] = { fg = p.orange }, -- Highlight variables
+		["@variable.member"] = { fg = p.orange }, -- Highlight member variables
+		["@variable.builtin"] = { fg = p.orange_dim },
+		["@variable.parameter"] = { fg = p.blue_dim },
 
 		["@constructor"] = { fg = p.yellow },
 		["@tag"] = { fg = p.red },
