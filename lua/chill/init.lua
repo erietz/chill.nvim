@@ -4,6 +4,7 @@ local M = {}
 M._config = M._config
 	or {
 		variant = "dark", -- 'dark' or 'light'
+		contrast = "normal", -- 'normal' or 'high'
 		transparent = false, -- Enable transparent background
 		italics = true, -- Use italics for comments and certain syntax elements
 		dim_inactive = false, -- Dim inactive windows
@@ -11,6 +12,7 @@ M._config = M._config
 
 local defaults = {
 	variant = "dark", -- 'dark' or 'light'
+	contrast = "normal", -- 'normal' or 'high'
 	transparent = false, -- Enable transparent background
 	italics = true, -- Use italics for comments and certain syntax elements
 	dim_inactive = false, -- Dim inactive windows

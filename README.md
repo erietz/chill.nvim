@@ -51,6 +51,7 @@ vim.cmd.colorscheme 'chill'
 -- Default configuration
 require('chill').setup({
   variant = 'dark', -- 'dark' or 'light'
+  contrast = 'normal', -- 'normal' or 'high'
   transparent = false, -- Enable transparent background
   italics = true, -- Use italics for comments and certain syntax elements
   dim_inactive = false, -- Dim inactive windows
@@ -59,6 +60,10 @@ require('chill').setup({
 -- Apply colorscheme
 vim.cmd.colorscheme 'chill'
 ```
+
+The new `contrast` option allows you to choose between:
+- `normal`: The original softer, more muted aesthetic
+- `high`: Enhanced contrast with more vibrant syntax highlighting against background
 
 ## Screenshots
 

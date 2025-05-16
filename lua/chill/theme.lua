@@ -2,14 +2,15 @@ local M = {}
 
 function M.generate(config)
 	local variant = config.variant or "dark"
+	local contrast = config.contrast or "normal"
 	local transparent = config.transparent or false
 	local italics = config.italics
 	if italics == nil then
 		italics = true
 	end
 
-	-- Palette for dark theme
-	local dark = {
+	-- Palette for dark theme (normal contrast)
+	local dark_normal = {
 		-- Main colors
 		bg0 = "#1C2321", -- Main background
 		bg1 = "#2A342F", -- Secondary background (status line, floating windows)
@@ -51,8 +52,51 @@ function M.generate(config)
 		none = "NONE",
 	}
 
-	-- Palette for light theme
-	local light = {
+	-- Palette for dark theme (high contrast)
+	local dark_high = {
+		-- Main colors (same as normal contrast)
+		bg0 = "#1C2321", -- Main background
+		bg1 = "#2A342F", -- Secondary background (status line, floating windows)
+		bg2 = "#384740", -- Lighter background (line nr, folded text)
+		bg3 = "#4B5E54", -- Subtle selection background
+		fg0 = "#E3D7C1", -- Brighter main foreground
+		fg1 = "#C7BCA5", -- Brighter secondary foreground
+		fg2 = "#AAA092", -- Brighter dimmed foreground
+
+		-- Accent colors (brighter for better contrast)
+		green = "#94B48B", -- Brighter moss/lichen
+		green_dim = "#79A171", -- Brighter deeper moss
+		blue = "#9CBFC3", -- Brighter misty blue-green
+		blue_dim = "#7FA3A8", -- Brighter deeper misty blue
+		aqua = "#B5D0C7", -- Brighter sage
+		aqua_dim = "#97B2A9", -- Brighter deeper sage
+		purple = "#C9A0BC", -- Brighter faded berry
+		purple_dim = "#AB829E", -- Brighter deeper faded berry
+		yellow = "#F0CC70", -- Brighter autumn leaf
+		yellow_dim = "#D2AE52", -- Brighter deeper autumn leaf
+		orange = "#E5B06C", -- Brighter oak
+		orange_dim = "#C79251", -- Brighter deeper oak
+		red = "#D88C8C", -- Brighter faded red mushroom
+		red_dim = "#BA6E6E", -- Brighter deeper red mushroom
+		grey = "#98A49A", -- Brighter stone grey
+
+		-- Special purpose
+		error = "#D26D74", -- Brighter error text
+		warning = "#DBBD8E", -- Brighter warning text
+		hint = "#9DB3B3", -- Brighter hint text
+		info = "#8EAC9F", -- Brighter info text
+
+		-- Diff
+		diff_add = "#526854", -- Brighter added line
+		diff_mod = "#5D6B6D", -- Brighter modified line
+		diff_del = "#6C5A5B", -- Brighter deleted line
+
+		-- None is used to reset highlight
+		none = "NONE",
+	}
+
+	-- Palette for light theme (normal contrast)
+	local light_normal = {
 		-- Main colors
 		bg0 = "#F3F0E9", -- Main background
 		bg1 = "#E5E0D5", -- Secondary background (status line, floating windows)
@@ -94,8 +138,64 @@ function M.generate(config)
 		none = "NONE",
 	}
 
-	-- Select palette based on variant
-	local p = variant == "light" and light or dark
+	-- Palette for light theme (high contrast)
+	local light_high = {
+		-- Main colors (same as normal contrast)
+		bg0 = "#F3F0E9", -- Main background
+		bg1 = "#E5E0D5", -- Secondary background (status line, floating windows)
+		bg2 = "#D7CFBF", -- Lighter background (line nr, folded text)
+		bg3 = "#C8C0AF", -- Subtle selection background
+		fg0 = "#313E35", -- Darker main foreground
+		fg1 = "#445249", -- Darker secondary foreground
+		fg2 = "#58675F", -- Darker dimmed foreground
+
+		-- Accent colors (darker/more saturated for better contrast in light mode)
+		green = "#3E6035", -- Darker moss/lichen
+		green_dim = "#2B492A", -- Darker deeper moss
+		blue = "#3D5C52", -- Darker misty blue-green
+		blue_dim = "#253E36", -- Darker deeper misty blue
+		aqua = "#41695A", -- Darker sage
+		aqua_dim = "#2E4D42", -- Darker deeper sage
+		purple = "#5E494C", -- Darker faded berry
+		purple_dim = "#462E31", -- Darker deeper faded berry
+		yellow = "#876718", -- Darker autumn leaf
+		yellow_dim = "#6B4F0A", -- Darker deeper autumn leaf
+		orange = "#7A4E1B", -- Darker oak
+		orange_dim = "#613408", -- Darker deeper oak
+		red = "#723B3B", -- Darker faded red mushroom
+		red_dim = "#592828", -- Darker deeper red mushroom
+		grey = "#5B6559", -- Darker stone grey
+
+		-- Special purpose
+		error = "#9E303B", -- Darker error text
+		warning = "#967A36", -- Darker warning text
+		hint = "#4A7070", -- Darker hint text
+		info = "#3F6E57", -- Darker info text
+
+		-- Diff
+		diff_add = "#C1CBBD", -- Darker added line
+		diff_mod = "#C1CACB", -- Darker modified line
+		diff_del = "#D2C1C1", -- Darker deleted line
+
+		-- None is used to reset highlight
+		none = "NONE",
+	}
+
+	-- Select palette based on variant and contrast
+	local p
+	if variant == "light" then
+		if contrast == "high" then
+			p = light_high
+		else
+			p = light_normal
+		end
+	else
+		if contrast == "high" then
+			p = dark_high
+		else
+			p = dark_normal
+		end
+	end
 
 	-- Set direct attribute values instead of using computed keys
 	local use_italic = italics
