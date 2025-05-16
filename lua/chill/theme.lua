@@ -13,40 +13,40 @@ function M.generate(config)
 	local dark_normal = {
 		-- Main colors
 		bg0 = "#27312E", -- Main background (slightly lighter green)
-		bg1 = "#2A342F", -- Secondary background (status line, floating windows)
-		bg2 = "#384740", -- Lighter background (line nr, folded text)
-		bg3 = "#4B5E54", -- Subtle selection background
-		fg0 = "#D3C7B1", -- Main foreground
-		fg1 = "#B7AC95", -- Secondary foreground
-		fg2 = "#9A9082", -- Dimmed foreground
+		bg1 = "#2C3833", -- Secondary background (status line, floating windows)
+		bg2 = "#3A4A43", -- Lighter background (line nr, folded text)
+		bg3 = "#4F6358", -- Subtle selection background
+		fg0 = "#D8CBB8", -- Main foreground
+		fg1 = "#BCAF9A", -- Secondary foreground
+		fg2 = "#9F9485", -- Dimmed foreground
 
 		-- Accent colors (nature inspired)
-		green = "#7C9C73", -- Moss/lichen
-		green_dim = "#5F7959", -- Deeper moss
-		blue = "#8BA59B", -- Misty blue-green
-		blue_dim = "#6D8980", -- Deeper misty blue
-		aqua = "#A1B5A8", -- Sage
-		aqua_dim = "#839089", -- Deeper sage
-		purple = "#A68F92", -- Faded berry
-		purple_dim = "#846F72", -- Deeper faded berry
-		yellow = "#D1B171", -- Autumn leaf
-		yellow_dim = "#B39556", -- Deeper autumn leaf
-		orange = "#C39B6A", -- Oak
-		orange_dim = "#A57D4F", -- Deeper oak
-		red = "#B07676", -- Faded red mushroom
-		red_dim = "#925B5B", -- Deeper red mushroom
-		grey = "#808B82", -- Stone grey
+		green = "#85A57C", -- Moss/lichen
+		green_dim = "#678B63", -- Deeper moss
+		blue = "#94B0A3", -- Misty blue-green
+		blue_dim = "#76988A", -- Deeper misty blue
+		aqua = "#A9C0B2", -- Sage
+		aqua_dim = "#8B9F92", -- Deeper sage
+		purple = "#B09296", -- Faded berry
+		purple_dim = "#92757A", -- Deeper faded berry
+		yellow = "#D9B97A", -- Autumn leaf
+		yellow_dim = "#B89E5F", -- Deeper autumn leaf
+		orange = "#CBA374", -- Oak
+		orange_dim = "#AD8559", -- Deeper oak
+		red = "#BA7F7F", -- Faded red mushroom
+		red_dim = "#9C6464", -- Deeper red mushroom
+		grey = "#8A958A", -- Stone grey
 
 		-- Special purpose
-		error = "#C25D64", -- Error text
-		warning = "#CBAD7E", -- Warning text
-		hint = "#8DA3A3", -- Hint text
-		info = "#7E9C8F", -- Info text
+		error = "#C96A71", -- Error text
+		warning = "#D3B486", -- Warning text
+		hint = "#95B0B0", -- Hint text
+		info = "#88A89A", -- Info text
 
 		-- Diff
-		diff_add = "#475844", -- Added line
-		diff_mod = "#4D5B5D", -- Modified line
-		diff_del = "#5C4A4B", -- Deleted line
+		diff_add = "#4F6550", -- Added line
+		diff_mod = "#566464", -- Modified line
+		diff_del = "#654F50", -- Deleted line
 
 		-- None is used to reset highlight
 		none = "NONE",
@@ -55,41 +55,41 @@ function M.generate(config)
 	-- Palette for dark theme (high contrast)
 	local dark_high = {
 		-- Main colors (same as normal contrast)
-		bg0 = "#1C2321", -- Main background
-		bg1 = "#2A342F", -- Secondary background (status line, floating windows)
-		bg2 = "#384740", -- Lighter background (line nr, folded text)
-		bg3 = "#4B5E54", -- Subtle selection background
-		fg0 = "#E3D7C1", -- Brighter main foreground
-		fg1 = "#C7BCA5", -- Brighter secondary foreground
-		fg2 = "#AAA092", -- Brighter dimmed foreground
+		bg0 = "#1E2623", -- Main background
+		bg1 = "#2C3833", -- Secondary background (status line, floating windows)
+		bg2 = "#3A4A43", -- Lighter background (line nr, folded text)
+		bg3 = "#4F6358", -- Subtle selection background
+		fg0 = "#E8DCC8", -- Brighter main foreground
+		fg1 = "#CCBFA8", -- Brighter secondary foreground
+		fg2 = "#AFA495", -- Brighter dimmed foreground
 
 		-- Accent colors (brighter for better contrast)
-		green = "#94B48B", -- Brighter moss/lichen
-		green_dim = "#79A171", -- Brighter deeper moss
-		blue = "#9CBFC3", -- Brighter misty blue-green
-		blue_dim = "#7FA3A8", -- Brighter deeper misty blue
-		aqua = "#B5D0C7", -- Brighter sage
-		aqua_dim = "#97B2A9", -- Brighter deeper sage
-		purple = "#C9A0BC", -- Brighter faded berry
-		purple_dim = "#AB829E", -- Brighter deeper faded berry
-		yellow = "#F0CC70", -- Brighter autumn leaf
-		yellow_dim = "#D2AE52", -- Brighter deeper autumn leaf
-		orange = "#E5B06C", -- Brighter oak
-		orange_dim = "#C79251", -- Brighter deeper oak
-		red = "#D88C8C", -- Brighter faded red mushroom
-		red_dim = "#BA6E6E", -- Brighter deeper red mushroom
-		grey = "#98A49A", -- Brighter stone grey
+		green = "#9DBD94", -- Brighter moss/lichen
+		green_dim = "#82A37A", -- Brighter deeper moss
+		blue = "#A5C7C9", -- Brighter misty blue-green
+		blue_dim = "#88AFAF", -- Brighter deeper misty blue
+		aqua = "#C0E0D2", -- Brighter sage
+		aqua_dim = "#A2C2B4", -- Brighter deeper sage
+		purple = "#D1A8C6", -- Brighter faded berry
+		purple_dim = "#B48AA8", -- Brighter deeper faded berry
+		yellow = "#F8D478", -- Brighter autumn leaf
+		yellow_dim = "#DAB85A", -- Brighter deeper autumn leaf
+		orange = "#F0C07C", -- Brighter oak
+		orange_dim = "#D2A261", -- Brighter deeper oak
+		red = "#E09C9C", -- Brighter faded red mushroom
+		red_dim = "#C27E7E", -- Brighter deeper red mushroom
+		grey = "#A2B0A2", -- Brighter stone grey
 
 		-- Special purpose
-		error = "#D26D74", -- Brighter error text
-		warning = "#DBBD8E", -- Brighter warning text
-		hint = "#9DB3B3", -- Brighter hint text
-		info = "#8EAC9F", -- Brighter info text
+		error = "#E27A81", -- Brighter error text
+		warning = "#EBCD9E", -- Brighter warning text
+		hint = "#ADBFBF", -- Brighter hint text
+		info = "#9EB8A9", -- Brighter info text
 
 		-- Diff
-		diff_add = "#526854", -- Brighter added line
-		diff_mod = "#5D6B6D", -- Brighter modified line
-		diff_del = "#6C5A5B", -- Brighter deleted line
+		diff_add = "#5A765A", -- Brighter added line
+		diff_mod = "#667676", -- Brighter modified line
+		diff_del = "#765A5B", -- Brighter deleted line
 
 		-- None is used to reset highlight
 		none = "NONE",
@@ -98,41 +98,41 @@ function M.generate(config)
 	-- Palette for light theme (normal contrast)
 	local light_normal = {
 		-- Main colors
-		bg0 = "#F3F0E9", -- Main background
-		bg1 = "#E5E0D5", -- Secondary background (status line, floating windows)
-		bg2 = "#D7CFBF", -- Lighter background (line nr, folded text)
-		bg3 = "#C8C0AF", -- Subtle selection background
-		fg0 = "#435049", -- Main foreground
-		fg1 = "#566459", -- Secondary foreground
-		fg2 = "#6A796F", -- Dimmed foreground
+		bg0 = "#F5F2EB", -- Main background
+		bg1 = "#E7E2D7", -- Secondary background (status line, floating windows)
+		bg2 = "#D9D1C1", -- Lighter background (line nr, folded text)
+		bg3 = "#CAC0B1", -- Subtle selection background
+		fg0 = "#47544D", -- Main foreground
+		fg1 = "#5A645B", -- Secondary foreground
+		fg2 = "#6E7A71", -- Dimmed foreground
 
 		-- Accent colors (nature inspired)
-		green = "#5E8055", -- Moss/lichen
-		green_dim = "#4B694A", -- Deeper moss
-		blue = "#5D7C72", -- Misty blue-green
-		blue_dim = "#455E56", -- Deeper misty blue
-		aqua = "#61897A", -- Sage
-		aqua_dim = "#4E6D62", -- Deeper sage
-		purple = "#7E696C", -- Faded berry
-		purple_dim = "#664E51", -- Deeper faded berry
-		yellow = "#A78738", -- Autumn leaf
-		yellow_dim = "#8B6F2A", -- Deeper autumn leaf
-		orange = "#9A6E3B", -- Oak
-		orange_dim = "#815428", -- Deeper oak
-		red = "#925B5B", -- Faded red mushroom
-		red_dim = "#794848", -- Deeper red mushroom
-		grey = "#7B8579", -- Stone grey
+		green = "#678F5D", -- Moss/lichen
+		green_dim = "#547A50", -- Deeper moss
+		blue = "#678F7A", -- Misty blue-green
+		blue_dim = "#4F6F60", -- Deeper misty blue
+		aqua = "#6A9B85", -- Sage
+		aqua_dim = "#577F6A", -- Deeper sage
+		purple = "#8A7376", -- Faded berry
+		purple_dim = "#70585A", -- Deeper faded berry
+		yellow = "#B08F40", -- Autumn leaf
+		yellow_dim = "#94732A", -- Deeper autumn leaf
+		orange = "#A87A43", -- Oak
+		orange_dim = "#8F5E30", -- Deeper oak
+		red = "#9C6464", -- Faded red mushroom
+		red_dim = "#835050", -- Deeper red mushroom
+		grey = "#858F83", -- Stone grey
 
 		-- Special purpose
-		error = "#AE404B", -- Error text
-		warning = "#A68A46", -- Warning text
-		hint = "#5A8080", -- Hint text
-		info = "#4F7E67", -- Info text
+		error = "#B24A55", -- Error text
+		warning = "#B6924E", -- Warning text
+		hint = "#628A8A", -- Hint text
+		info = "#577E6F", -- Info text
 
 		-- Diff
-		diff_add = "#D1DBCD", -- Added line
-		diff_mod = "#D1DADB", -- Modified line
-		diff_del = "#E2D1D1", -- Deleted line
+		diff_add = "#D9E3D5", -- Added line
+		diff_mod = "#D9E0E1", -- Modified line
+		diff_del = "#EAE1E1", -- Deleted line
 
 		-- None is used to reset highlight
 		none = "NONE",
@@ -141,41 +141,41 @@ function M.generate(config)
 	-- Palette for light theme (high contrast)
 	local light_high = {
 		-- Main colors (same as normal contrast)
-		bg0 = "#F3F0E9", -- Main background
-		bg1 = "#E5E0D5", -- Secondary background (status line, floating windows)
-		bg2 = "#D7CFBF", -- Lighter background (line nr, folded text)
-		bg3 = "#C8C0AF", -- Subtle selection background
-		fg0 = "#313E35", -- Darker main foreground
-		fg1 = "#445249", -- Darker secondary foreground
-		fg2 = "#58675F", -- Darker dimmed foreground
+		bg0 = "#F5F2EB", -- Main background
+		bg1 = "#E7E2D7", -- Secondary background (status line, floating windows)
+		bg2 = "#D9D1C1", -- Lighter background (line nr, folded text)
+		bg3 = "#CAC0B1", -- Subtle selection background
+		fg0 = "#354237", -- Darker main foreground
+		fg1 = "#47544D", -- Darker secondary foreground
+		fg2 = "#5B645B", -- Darker dimmed foreground
 
 		-- Accent colors (darker/more saturated for better contrast in light mode)
-		green = "#3E6035", -- Darker moss/lichen
-		green_dim = "#2B492A", -- Darker deeper moss
-		blue = "#3D5C52", -- Darker misty blue-green
-		blue_dim = "#253E36", -- Darker deeper misty blue
-		aqua = "#41695A", -- Darker sage
-		aqua_dim = "#2E4D42", -- Darker deeper sage
-		purple = "#5E494C", -- Darker faded berry
-		purple_dim = "#462E31", -- Darker deeper faded berry
-		yellow = "#876718", -- Darker autumn leaf
-		yellow_dim = "#6B4F0A", -- Darker deeper autumn leaf
-		orange = "#7A4E1B", -- Darker oak
-		orange_dim = "#613408", -- Darker deeper oak
-		red = "#723B3B", -- Darker faded red mushroom
-		red_dim = "#592828", -- Darker deeper red mushroom
-		grey = "#5B6559", -- Darker stone grey
+		green = "#4E703D", -- Darker moss/lichen
+		green_dim = "#3B5932", -- Darker deeper moss
+		blue = "#4E7060", -- Darker misty blue-green
+		blue_dim = "#365042", -- Darker deeper misty blue
+		aqua = "#517F6A", -- Darker sage
+		aqua_dim = "#3E6350", -- Darker deeper sage
+		purple = "#6E5558", -- Darker faded berry
+		purple_dim = "#563A3D", -- Darker deeper faded berry
+		yellow = "#9F7718", -- Darker autumn leaf
+		yellow_dim = "#835F0A", -- Darker deeper autumn leaf
+		orange = "#8A5E1B", -- Darker oak
+		orange_dim = "#714408", -- Darker deeper oak
+		red = "#7A3B3B", -- Darker faded red mushroom
+		red_dim = "#612828", -- Darker deeper red mushroom
+		grey = "#6B7569", -- Darker stone grey
 
 		-- Special purpose
-		error = "#9E303B", -- Darker error text
-		warning = "#967A36", -- Darker warning text
+		error = "#AE303B", -- Darker error text
+		warning = "#A67A36", -- Darker warning text
 		hint = "#4A7070", -- Darker hint text
 		info = "#3F6E57", -- Darker info text
 
 		-- Diff
-		diff_add = "#C1CBBD", -- Darker added line
-		diff_mod = "#C1CACB", -- Darker modified line
-		diff_del = "#D2C1C1", -- Darker deleted line
+		diff_add = "#C9D3C5", -- Darker added line
+		diff_mod = "#C9D2D3", -- Darker modified line
+		diff_del = "#D9C9C9", -- Darker deleted line
 
 		-- None is used to reset highlight
 		none = "NONE",
